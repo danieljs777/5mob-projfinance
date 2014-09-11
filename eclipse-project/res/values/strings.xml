@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FinanceProj</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="lbl_login_user">Login</string>
+    <string name="lbl_login_pwd">Senha</string>
+
+</resources>
