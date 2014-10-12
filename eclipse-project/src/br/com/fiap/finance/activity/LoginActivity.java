@@ -1,6 +1,7 @@
 package br.com.fiap.finance.activity;
 
-import br.com.fiap.controledefinancas.R;
+import com.example.financeproj.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
