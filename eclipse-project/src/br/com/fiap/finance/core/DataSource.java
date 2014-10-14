@@ -2,8 +2,11 @@ package br.com.fiap.finance.core;
 
 import java.io.File;
 
-import br.com.fiap.finance.dao.CategoriesDAO;
+import br.com.fiap.finance.dao.CategoryDAO;
+import br.com.fiap.finance.dao.PaymentMethodDAO;
+import br.com.fiap.finance.dao.TransactionCategoryDAO;
 import br.com.fiap.finance.dao.TransactionDAO;
+import br.com.fiap.finance.dao.TransactionTypeDAO;
 import br.com.fiap.finance.dao.UserDAO;
 
 import android.content.Context;
@@ -57,14 +60,17 @@ public class DataSource extends SQLiteOpenHelper
 	{
 		try
 		{
+			this.database.execSQL(CategoryDAO._setupSQL);
+			this.database.execSQL(PaymentMethodDAO._setupSQL);
+			this.database.execSQL(TransactionCategoryDAO._setupSQL);
+			this.database.execSQL(TransactionTypeDAO._setupSQL);
 			this.database.execSQL(TransactionDAO._setupSQL);
-			this.database.execSQL(CategoriesDAO._setupSQL);
 			this.database.execSQL(UserDAO._setupSQL);
 			
 		}
 		catch(Exception e)
 		{
-			Log.println(0, "", "Ocorreu um erro ao criar o Banco de Dados!");
+			Log.println(0, "", "Ocorreu um erro ao criar o Banco de Dados: " + e.getMessage());
 		}
 		
 		return false;
@@ -72,20 +78,41 @@ public class DataSource extends SQLiteOpenHelper
 
 	public boolean cleanUp( )
 	{
-		this.database.execSQL("TRUNCATE TABLE " + TransactionDAO.TABLE_NAME);
-		this.database.execSQL("TRUNCATE TABLE " + CategoriesDAO.TABLE_NAME);
-		this.database.execSQL("TRUNCATE TABLE " + UserDAO.TABLE_NAME);
-		
+		try
+		{
+			this.database.execSQL("TRUNCATE TABLE " + CategoryDAO.TABLE_NAME);
+			this.database.execSQL("TRUNCATE TABLE " + PaymentMethodDAO.TABLE_NAME);
+			this.database.execSQL("TRUNCATE TABLE " + TransactionCategoryDAO.TABLE_NAME);
+			this.database.execSQL("TRUNCATE TABLE " + TransactionTypeDAO.TABLE_NAME);
+			this.database.execSQL("TRUNCATE TABLE " + TransactionDAO.TABLE_NAME);
+			this.database.execSQL("TRUNCATE TABLE " + UserDAO.TABLE_NAME);
+		}
+		catch(Exception e)
+		{
+			Log.println(0, "", "Ocorreu um erro ao limpar o Banco de Dados: " + e.getMessage());
+		}
+			
 		return false;
 	}	
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
 	{
-		db.execSQL("DROP TABLE IF EXISTS " + TransactionDAO.TABLE_NAME);
-		db.execSQL("DROP TABLE IF EXISTS " + CategoriesDAO.TABLE_NAME);
-		db.execSQL("DROP TABLE IF EXISTS " + UserDAO.TABLE_NAME);
-		onCreate( db );
+		try
+		{
+			db.execSQL("DROP TABLE IF EXISTS " + CategoryDAO.TABLE_NAME);
+			db.execSQL("DROP TABLE IF EXISTS " + PaymentMethodDAO.TABLE_NAME);
+			db.execSQL("DROP TABLE IF EXISTS " + TransactionCategoryDAO.TABLE_NAME);
+			db.execSQL("DROP TABLE IF EXISTS " + TransactionTypeDAO.TABLE_NAME);
+			db.execSQL("DROP TABLE IF EXISTS " + TransactionDAO.TABLE_NAME);
+			db.execSQL("DROP TABLE IF EXISTS " + UserDAO.TABLE_NAME);
+			onCreate( db );			
+		}
+		catch(Exception e)
+		{
+			Log.println(0, "", "Ocorreu um erro ao atualizar o Banco de Dados: " + e.getMessage());
+		}
+
 		
 	}
 	
