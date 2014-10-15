@@ -5,14 +5,17 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="title_activity_login">LoginActivity</string>
-	<string name="tvEmail">Email</string>
-	<string name="tvPassword">Senha</string>
-	<string name="btnLogin">Login</string>
-	<string name="btnCalendar">Calendario</string>
-	<string name="btnBackup">Backup</string>
-	<string name="btnCategories">Categorias</string>
-	<string name="btnFinances">Finanças</string>
-	<string name="btnGraphics">Gráficos</string>
-	<string name="btnDeleteData">Apagar Dados</string>
-	<string name="btnInformations">Informações</string>
+    <string name="tvEmail">Email</string>
+    <string name="tvPassword">Senha</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnCalendar">Calendario</string>
+    <string name="btnBackup">Backup</string>
+    <string name="btnCategories">Categorias</string>
+    <string name="btnFinances">Finanças</string>
+    <string name="btnGraphics">Gráficos</string>
+    <string name="btnDeleteData">Apagar Dados</string>
+    <string name="btnInformations">Informações</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

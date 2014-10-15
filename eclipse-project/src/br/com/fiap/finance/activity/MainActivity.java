@@ -3,6 +3,7 @@ package br.com.fiap.finance.activity;
 import com.example.financeproj.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,7 +36,8 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// Intent i = new Intent(MainActivity.this, CalendarActivity.class);
+				 Intent i = new Intent(MainActivity.this, CalendarActivity.class);
+				 startActivity(i);
 			}
 		});
 		
@@ -44,6 +46,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// Intent i = new Intent(MainActivity.this, BackupActivity.class);
+				//startActivity(i);
 			}
 		});
 		
@@ -52,6 +55,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// Intent i = new Intent(MainActivity.this, CategoriesActivity.class);
+				//startActivity(i);
 			}
 		});
 		
@@ -60,6 +64,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// Intent i = new Intent(MainActivity.this, FinancesActivity.class);
+				//startActivity(i);
 			}
 		});
 		
@@ -68,6 +73,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// Intent i = new Intent(MainActivity.this, GraphicsActivity.class);
+				//startActivity(i);
 			}
 		});
 		
