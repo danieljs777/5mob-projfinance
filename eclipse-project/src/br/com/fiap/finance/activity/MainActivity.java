@@ -11,13 +11,13 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 	
-	Button btnCalendar;
-	Button btnBackup;
-	Button btnCategories;
-	Button btnFinances;
-	Button btnGraphics;
-	Button btnDeleteData;
-	Button btnInformations;
+	private Button btnCalendar;
+	private Button btnBackup;
+	private Button btnCategories;
+	private Button btnFinances;
+	private Button btnGraphics;
+	private Button btnDeleteData;
+	private Button btnInformations;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,22 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// Intent i = new Intent(MainActivity.this, GraphicsActivity.class);
 				//startActivity(i);
+			}
+		});
+		
+		btnDeleteData.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//DO STUFF
+			}
+		});
+		
+		btnInformations.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//DO STUFF 2
 			}
 		});
 		

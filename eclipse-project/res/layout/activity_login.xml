@@ -53,4 +53,12 @@
         android:layout_centerVertical="true"
         android:text="@string/btnLogin" />
 
+    <Button
+        android:id="@+id/btnSignUpForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btnSignUp" />
+
 </RelativeLayout>

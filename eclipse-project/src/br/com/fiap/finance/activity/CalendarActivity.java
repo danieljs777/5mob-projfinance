@@ -37,7 +37,6 @@ public class CalendarActivity extends Activity {
 									// needs showing the event marker
 	ArrayList<String> event;
 	LinearLayout rLayout;
-	ArrayList<String> date;
 	ArrayList<String> desc;
 
 	public void onCreate(Bundle savedInstanceState) {
@@ -92,7 +91,6 @@ public class CalendarActivity extends Activity {
 					((LinearLayout) rLayout).removeAllViews();
 				}
 				desc = new ArrayList<String>();
-				date = new ArrayList<String>();
 				((CalendarAdapter) parent.getAdapter()).setSelected(v);
 				String selectedGridDate = CalendarAdapter.dayString
 						.get(position);

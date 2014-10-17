@@ -17,5 +17,9 @@
     <string name="btnInformations">Informações</string>
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="btnSignUp">Cadastrar</string>
+	<string name="arrow_left">Left Arrow</string>
+	<string name="arrow_right">Right Arrow</string>
+	<string name="btnCancel">Cancelar</string>
 </resources>

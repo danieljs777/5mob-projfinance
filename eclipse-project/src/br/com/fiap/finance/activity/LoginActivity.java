@@ -11,7 +11,8 @@ import android.widget.Button;
 
 public class LoginActivity extends Activity {
 
-	Button btnLogin;
+	private Button btnLogin;
+	private Button btnSignUpForward;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +20,22 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 		
 		btnLogin = (Button) findViewById(R.id.btnLogin);
+		btnSignUpForward = (Button) findViewById(R.id.btnSignUpForward);
 		
 		btnLogin.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				attemptLogin();
+			}
+		});
+		
+		btnSignUpForward.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
+				startActivity(i);
 			}
 		});
 	}
