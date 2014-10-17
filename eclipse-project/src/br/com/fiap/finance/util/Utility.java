@@ -19,6 +19,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import br.com.fiap.finance.model.TransactionVO;
+
 import android.content.Context;
 import android.util.Log;
 
@@ -28,21 +30,19 @@ import android.util.Log;
 public class Utility {
 	public static ArrayList<String> nameOfEvent = new ArrayList<String>();
 	public static ArrayList<String> startDates = new ArrayList<String>();
-	public static ArrayList<String> endDates = new ArrayList<String>();
 	public static ArrayList<String> descriptions = new ArrayList<String>();
 
 	public static ArrayList<String> readCalendarEvent(Context context) {
 		
-
+		TransactionVO transactionVO = new TransactionVO();
+		
 		// fetching calendars id
 		nameOfEvent.clear();
 		startDates.clear();
-		endDates.clear();
 		descriptions.clear();
 
 			nameOfEvent.add("Teste1");
 			startDates.add(getDate(1413343207264l));
-			endDates.add(getDate(1413343207264l));
 			descriptions.add("teste");
 
 		

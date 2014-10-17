@@ -34,9 +34,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * @author Mukesh Y
- */
+
 public class CalendarAdapter extends BaseAdapter {
 	private Context mContext;
 

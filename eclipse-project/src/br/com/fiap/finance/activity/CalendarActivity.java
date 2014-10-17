@@ -15,7 +15,6 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -26,9 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * @author Mukesh Y
- */
+
 public class CalendarActivity extends Activity {
 
 	public GregorianCalendar month, itemmonth;// calendar instances.
@@ -190,8 +187,6 @@ public class CalendarActivity extends Activity {
 			DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 			String itemvalue;
 			event = Utility.readCalendarEvent(CalendarActivity.this);
-			Log.d("=====Event====", event.toString());
-			Log.d("=====Date ARRAY====", Utility.startDates.toString());
 
 			for (int i = 0; i < Utility.startDates.size(); i++) {
 				itemvalue = df.format(itemmonth.getTime());
