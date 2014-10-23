@@ -17,10 +17,10 @@ public class TransactionDAO extends DataSource {
 	
 	private TransactionVO voReference;
 	
-	public final static String _setupSQL   = "CREATE TABLE " + TABLE_NAME +
+	public final static String _setupSQL   = "CREATE TABLE `" + TABLE_NAME + "`" +
 			"(" +
 			" id integer auto_increment primary key," +
-			" category integer" +
+			" category integer," +
 			" description varchar(50) not null," +
 			" type smallint not null," +
 			" amount decimal(9,2) not null," +
@@ -28,7 +28,7 @@ public class TransactionDAO extends DataSource {
 			" tran_time time," +
 			" gps_coordinations varchar(100)," +
 			" payment_method integer," +
-			" store varchar(50)," +
+			" store varchar(50)" +
 			" )";
 	
 	private static final String INSERT = "INSERT INTO " + TABLE_NAME + " " +

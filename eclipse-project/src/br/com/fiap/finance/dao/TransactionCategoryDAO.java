@@ -27,7 +27,7 @@ public class TransactionCategoryDAO extends DataSource {
 	
 	public final static String _setupSQL   = "CREATE TABLE " + TABLE_NAME +
 			"(" +
-			" tran_id integer" +
+			" tran_id integer," +
 			" cat_id integer," +
 			" primary key(tran_id, cat_id)" +
 			" )";
