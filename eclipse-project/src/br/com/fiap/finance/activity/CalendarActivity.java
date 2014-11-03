@@ -9,12 +9,14 @@ import java.util.Locale;
 import com.example.financeproj.R;
 
 import br.com.fiap.finance.adapter.CalendarAdapter;
+import br.com.fiap.finance.model.TransactionVO;
 import br.com.fiap.finance.util.Utility;
 
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -28,14 +30,14 @@ import android.widget.Toast;
 
 public class CalendarActivity extends Activity {
 
-	public GregorianCalendar month, itemmonth;// calendar instances.
+	public GregorianCalendar month, itemmonth;
 
-	public CalendarAdapter adapter;// adapter instance
-	public Handler handler;// for grabbing some event values for showing the dot
-							// marker.
-	public ArrayList<String> items; // container to store calendar items which
-									// needs showing the event marker
-	ArrayList<String> event;
+	public CalendarAdapter adapter;
+	public Handler handler;
+							
+	public ArrayList<String> items;
+									
+	ArrayList<TransactionVO> transactions;
 	LinearLayout rLayout;
 	ArrayList<String> desc;
 
@@ -48,7 +50,7 @@ public class CalendarActivity extends Activity {
 		month = (GregorianCalendar) GregorianCalendar.getInstance();
 		itemmonth = (GregorianCalendar) month.clone();
 
-		items = new ArrayList<String>();
+		items = new ArrayList<>();
 
 		adapter = new CalendarAdapter(this, month);
 
@@ -108,9 +110,9 @@ public class CalendarActivity extends Activity {
 				}
 				((CalendarAdapter) parent.getAdapter()).setSelected(v);
 
-				for (int i = 0; i < Utility.startDates.size(); i++) {
-					if (Utility.startDates.get(i).equals(selectedGridDate)) {
-						desc.add(Utility.nameOfEvent.get(i));
+				for (int i = 0; i < Utility.transactions.size(); i++) {
+					if (Utility.getDate(Utility.transactions.get(i).getTranDate().getTime()).equals(selectedGridDate)) {
+						desc.add(Utility.transactions.get(i).getDescription());
 					}
 				}
 
@@ -170,7 +172,7 @@ public class CalendarActivity extends Activity {
 
 		adapter.refreshDays();
 		adapter.notifyDataSetChanged();
-		handler.post(calendarUpdater); // generate some calendar items
+		handler.post(calendarUpdater); 
 
 		title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
 	}
@@ -181,15 +183,14 @@ public class CalendarActivity extends Activity {
 		public void run() {
 			items.clear();
 
-			// Print dates of the current week
+			
 			DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 			String itemvalue;
-			event = Utility.readCalendarEvent(CalendarActivity.this);
-
-			for (int i = 0; i < Utility.startDates.size(); i++) {
+		
+			for (int i = 0; i < Utility.transactions.size(); i++) {
 				itemvalue = df.format(itemmonth.getTime());
 				itemmonth.add(GregorianCalendar.DATE, 1);
-				items.add(Utility.startDates.get(i).toString());
+				items.add(Utility.getDate(Utility.transactions.get(i).getTranDate().getTime()));
 			}
 			adapter.setItems(items);
 			adapter.notifyDataSetChanged();

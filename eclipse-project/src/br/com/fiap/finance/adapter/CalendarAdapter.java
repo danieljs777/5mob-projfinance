@@ -1,6 +1,6 @@
-
-
 package br.com.fiap.finance.adapter;
+
+
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -19,7 +19,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 public class CalendarAdapter extends BaseAdapter {
 	private Context mContext;

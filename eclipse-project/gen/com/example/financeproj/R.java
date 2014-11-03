@@ -1314,17 +1314,6 @@ containing a value of this type.
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0b008b;
         /**  Application theme. 
@@ -1408,6 +1397,7 @@ containing a value of this type.
          */
         public static final int Theme_AppCompat_Light_DarkActionBar=0x7f0b0079;
         public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f0b007b;
+        public static final int Theme_AppCompat_Light_NoActionBar=0x7f0b008d;
         /**  Base platform-dependent theme  
          */
         public static final int Theme_Base=0x7f0b007e;
